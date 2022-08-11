@@ -32,7 +32,7 @@ suspend fun testEndpoint() = withMdcContext {
 2- Add segment to trace specific block of the code
 ```kotlin
 override suspend fun findAll(): List<Any> =
-        withNewRelicSegment("findAll") {
+        withNewRelicSegment("findAll", "Couchbase", "yourDb") {
             val query =
                 "SELECT * FROM yourDb"
             ...
